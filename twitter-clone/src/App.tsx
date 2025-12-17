@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { TheLayout } from './components/TheLayout';
+import ProtectedRoute from './components/ProtectedRoute';
+import GuestRoute from './components/GuestRoute';
+import SignUpPage from './pages/SignUpPage';
+import LoginPage from './pages/LoginPage';
+import TweetsPage from './pages/TweetsPage';
+
+const AppRoutes: React.FC = () => {
+  const { isAuthenticated } = useAuth();
+
+  return (
+    <TheLayout>
+      <Switch>
+        <GuestRoute exact path="/signup" component={SignUpPage} />
+        <GuestRoute exact path="/login" component={LoginPage} />
+        <ProtectedRoute exact path="/tweets" component={TweetsPage} />
+        <Route exact path="/">
+          <Redirect to={isAuthenticated ? "/tweets" : "/signup"} />
+        </Route>
+      </Switch>
+    </TheLayout>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </AuthProvider>
   );
 }
 

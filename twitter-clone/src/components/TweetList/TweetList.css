@@ -1,0 +1,28 @@
+.tweet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+
+.tweet-list__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.tweet-list__empty-message {
+  color: #727374;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.tweet-list__empty-subtitle {
+  color: #727374;
+  font-size: 14px;
+  opacity: 0.7;
+}

@@ -1,0 +1,23 @@
+.grudu-text-field input {
+  width: 100%;
+  padding: 8px 22px;
+  color: #42434B;
+  font-size: 28px;
+  border: 2px solid #42434B;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.grudu-text-field input::placeholder {
+  color: #727374;
+}
+
+.grudu-text-field--invalid input {
+  border-color: #dc3545;
+}
+
+.grudu-text-field__error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 4px;
+}

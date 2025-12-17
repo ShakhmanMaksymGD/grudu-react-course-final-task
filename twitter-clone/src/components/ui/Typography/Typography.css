@@ -1,0 +1,19 @@
+h1, h2, h3, h4, p, span {
+  margin: 0;
+  padding: 0;
+}
+
+.grudu-typography-h2 {
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.grudu-typography-h3 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.grudu-typography-h4, .grudu-typography-p, .grudu-typography-span {
+  font-size: 22px;
+  font-weight: normal;
+}

@@ -1,0 +1,23 @@
+.grudu-form {
+  padding: 28px 46px;
+  border: 2px solid #42434B;
+  border-radius: 8px;
+}
+
+.grudu-form__title {
+  margin-bottom: 46px;
+}
+
+.grudu-form__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.grudu-form__form > * + *:not(:last-child) {
+  margin-top: 28px;
+}
+
+.grudu-form__submit-button {
+  margin-top: 20px;
+  align-self: flex-end;
+}
